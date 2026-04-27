@@ -5,35 +5,41 @@ A comprehensive engagement detection and real-time analysis system using deep le
 ## Quick Start
 
 ### Prerequisites
+
 - Python 3.9 or higher
 - Git
 
 ### Setup Instructions
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/romulojr-dev/iskomate_individual_mode.git
    cd iskomate_individual_mode
    ```
 
 2. **Create a virtual environment**
+
    ```bash
    python -m venv engagement_env
    ```
 
 3. **Activate the virtual environment**
-   
+
    **Windows (PowerShell):**
+
    ```powershell
    .\engagement_env\Scripts\Activate.ps1
    ```
-   
+
    **Windows (Command Prompt):**
+
    ```cmd
    .\engagement_env\Scripts\activate.bat
    ```
-   
+
    **macOS/Linux:**
+
    ```bash
    source engagement_env/bin/activate
    ```
@@ -58,21 +64,25 @@ A comprehensive engagement detection and real-time analysis system using deep le
 ## Usage
 
 ### Basic Real-time Engagement Detection
+
 ```bash
 python realtime_engagement.py
 ```
 
 ### With OpenFace Features
+
 ```bash
 python realtime_engagement_openface.py
 ```
 
 ### Hybrid Detection
+
 ```bash
 python realtime_engagement_hybrid.py
 ```
 
 ### TCCT-Net Model
+
 For detailed instructions on using the TCCT-Net model, see [TCCT_Net/README.md](TCCT_Net/README.md)
 
 ```bash
@@ -92,6 +102,7 @@ python inference.py
 ## Dependencies
 
 All dependencies are listed in `requirements.txt` and include:
+
 - **Computer Vision**: OpenCV, MediaPipe
 - **Deep Learning**: PyTorch
 - **Data Processing**: NumPy, Pandas, SciPy
@@ -113,6 +124,7 @@ All dependencies are listed in `requirements.txt` and include:
 ## Configuration
 
 See `QUICK_REFERENCE.txt`, `TUNING_GUIDE.py`, and `OPTIMIZATION_SUMMARY.txt` for:
+
 - Camera calibration settings
 - Model tuning parameters
 - Performance optimization tips
@@ -120,10 +132,12 @@ See `QUICK_REFERENCE.txt`, `TUNING_GUIDE.py`, and `OPTIMIZATION_SUMMARY.txt` for
 ## Troubleshooting
 
 ### Camera Issues
+
 - Use `test_cam.py` to verify your webcam setup
 - Check window size configuration in `FIX_WINDOW_SIZE_ERROR.txt`
 
 ### Model Issues
+
 - Refer to `calibrate_normalization.py` for normalization calibration
 - Check `calibrate_sleep.py` for sleep detection calibration
 
