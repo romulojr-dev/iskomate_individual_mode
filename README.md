@@ -90,6 +90,87 @@ cd TCCT_Net
 python inference.py
 ```
 
+## OpenFace Setup
+
+OpenFace is required for advanced feature extraction. Follow the setup for your platform:
+
+### Option 1: Windows (Recommended - Pre-built Binaries)
+
+1. **Download OpenFace**
+   - Visit: https://github.com/TadasBaltrusaitis/OpenFace/releases
+   - Download: `OpenFace_2.2.0_win_x64.zip`
+
+2. **Extract & Install**
+   - Extract to a location like `C:\OpenFace\`
+   - Verify `FeatureExtraction.exe` exists in the folder
+
+3. **Configure Path**
+   - Open `realtime_engagement_openface.py`
+   - Update line 35:
+     ```python
+     OPENFACE_BIN = r"C:\OpenFace\FeatureExtraction.exe"
+     ```
+
+4. **Verify Installation**
+   ```bash
+   C:\OpenFace\FeatureExtraction.exe -help
+   ```
+
+5. **Run the Pipeline**
+   ```bash
+   python realtime_engagement_openface.py
+   ```
+
+### Option 2: Linux/macOS (Build from Source)
+
+Follow the official guide: https://github.com/TadasBaltrusaitis/OpenFace/wiki/Unix-Installation
+
+After building, update `realtime_engagement_openface.py`:
+
+```python
+OPENFACE_BIN = "/usr/local/bin/FeatureExtraction"  # macOS
+# or
+OPENFACE_BIN = "/usr/bin/FeatureExtraction"        # Linux
+```
+
+### Option 3: Docker (All Platforms)
+
+If you have Docker installed:
+
+```bash
+docker run -it -v $(pwd):/workspace algebr/openface:latest \
+    FeatureExtraction -f /workspace/video.mp4 -out_dir /workspace/output
+```
+
+### Tuning Parameters
+
+Edit `realtime_engagement_openface.py` to optimize performance:
+
+```python
+CHUNK_SIZE = 30                    # frames between OpenFace runs
+                                   # Smaller = more CPU, lower latency
+                                   # Larger = less CPU, higher latency
+
+FRAMES_BETWEEN_PREDICTIONS = 10    # how often to predict engagement
+
+AMPLIFICATION_FACTOR = 2.0         # pose signal amplification
+
+WINDOW_SIZE = 280                  # MUST match TCCT_Net/config.json
+```
+
+### Quick Verification
+
+Run this one-time check:
+
+```bash
+python QUICKSTART_OPENFACE_PIPELINE.py
+```
+
+This verifies:
+- OpenFace is installed
+- TCCT-Net configuration is valid
+- All dependencies are ready
+
 ## Key Features
 
 - Real-time facial engagement detection
