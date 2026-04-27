@@ -1,0 +1,42 @@
+# Core Data Processing
+numpy==1.23.4
+pandas==1.5.2
+scipy==1.9.3
+
+# Computer Vision & Media
+opencv-python==4.8.1.78
+opencv-contrib-python==4.8.1.78
+mediapipe==0.10.11
+Pillow==11.3.0
+
+# Deep Learning
+torch==1.13.0
+einops==0.8.0
+
+# Visualization & Analysis
+matplotlib==3.6.2
+tqdm==4.64.1
+
+# Signal Processing
+PyWavelets==1.4.1
+
+# Audio Processing
+sounddevice==0.5.5
+
+# Web/Networking
+websockets==15.0.1
+
+# Google/ML Utilities
+google-auth==2.49.1
+google-auth-oauthlib==1.0.0
+google-auth-httplib2==0.2.0
+protobuf==3.20.3
+absl-py==2.3.1
+
+# Cryptography
+cryptography==46.0.6
+
+# Utilities
+python-dateutil==2.9.0.post0
+pytz==2026.1.post1
+attrs==26.1.0
